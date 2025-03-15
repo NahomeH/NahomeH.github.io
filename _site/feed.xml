@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-14T20:01:30-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Nahome Hagos</title><subtitle>Personal website and blog showcasing my projects and thoughts</subtitle><author><name>Nahome</name></author><entry><title type="html">Getting Started with GitHub Pages</title><link href="http://localhost:4000/blog/2024/03/15/getting-started-with-github-pages/" rel="alternate" type="text/html" title="Getting Started with GitHub Pages" /><published>2024-03-15T00:00:00-07:00</published><updated>2024-03-15T00:00:00-07:00</updated><id>http://localhost:4000/blog/2024/03/15/getting-started-with-github-pages</id><content type="html" xml:base="http://localhost:4000/blog/2024/03/15/getting-started-with-github-pages/"><![CDATA[<p>GitHub Pages is a fantastic free hosting service that allows you to publish a website directly from your GitHub repository. In this guide, I’ll walk you through the process of setting up your own site using GitHub Pages.</p>
+
+<h2 id="what-is-github-pages">What is GitHub Pages?</h2>
+
+<p>GitHub Pages is a static site hosting service that takes HTML, CSS, and JavaScript files directly from a repository on GitHub, optionally runs the files through a build process, and publishes a website. You can host your site on GitHub’s <code class="language-plaintext highlighter-rouge">github.io</code> domain or your own custom domain.</p>
+
+<h2 id="why-use-github-pages">Why Use GitHub Pages?</h2>
+
+<p>There are several compelling reasons to use GitHub Pages for your website:</p>
+
+<ol>
+  <li><strong>It’s completely free</strong> - No hosting fees or hidden charges</li>
+  <li><strong>Simple deployment</strong> - Push to your repository and your changes are live</li>
+  <li><strong>Version control</strong> - Your website is in a Git repository, so you have full history</li>
+  <li><strong>Custom domains</strong> - You can use your own domain name</li>
+  <li><strong>HTTPS support</strong> - Free SSL certificates through Let’s Encrypt</li>
+</ol>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<h3 id="step-1-create-a-github-repository">Step 1: Create a GitHub Repository</h3>
+
+<p>First, create a new repository on GitHub. To create a user site (which will be available at <code class="language-plaintext highlighter-rouge">username.github.io</code>), name your repository <code class="language-plaintext highlighter-rouge">username.github.io</code>, replacing “username” with your actual GitHub username.</p>
+
+<h3 id="step-2-clone-the-repository">Step 2: Clone the Repository</h3>
+
+<p>Clone the repository to your local machine:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/username/username.github.io.git
+<span class="nb">cd </span>username.github.io
+</code></pre></div></div>
+
+<h3 id="step-3-create-your-website">Step 3: Create Your Website</h3>
+
+<p>You can now start building your website. At a minimum, you need an <code class="language-plaintext highlighter-rouge">index.html</code> file:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>My GitHub Pages Site<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Hello World!<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Welcome to my GitHub Pages site.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="step-4-commit-and-push">Step 4: Commit and Push</h3>
+
+<p>Add, commit, and push your changes to GitHub:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Initial commit"</span>
+git push <span class="nt">-u</span> origin main
+</code></pre></div></div>
+
+<h3 id="step-5-enable-github-pages">Step 5: Enable GitHub Pages</h3>
+
+<ol>
+  <li>Go to your repository on GitHub</li>
+  <li>Click on “Settings”</li>
+  <li>Scroll down to the “GitHub Pages” section</li>
+  <li>Select the branch you want to publish (usually “main”)</li>
+  <li>Click “Save”</li>
+</ol>
+
+<p>After a few minutes, your site will be available at <code class="language-plaintext highlighter-rouge">https://username.github.io</code>.</p>
+
+<h2 id="using-jekyll-with-github-pages">Using Jekyll with GitHub Pages</h2>
+
+<p>GitHub Pages has built-in support for Jekyll, a popular static site generator. Jekyll makes it easy to create a blog or more complex site structure.</p>
+
+<h3 id="step-1-create-a-jekyll-site">Step 1: Create a Jekyll Site</h3>
+
+<p>If you want to use Jekyll, you can either:</p>
+
+<ul>
+  <li>Create a new Jekyll site locally and push it to your repository</li>
+  <li>Add a <code class="language-plaintext highlighter-rouge">_config.yml</code> file to your existing repository</li>
+</ul>
+
+<p>For a new Jekyll site:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>jekyll bundler
+jekyll new my-site
+<span class="nb">cd </span>my-site
+</code></pre></div></div>
+
+<h3 id="step-2-add-blog-posts">Step 2: Add Blog Posts</h3>
+
+<p>With Jekyll, blog posts are Markdown files in the <code class="language-plaintext highlighter-rouge">_posts</code> directory. Create a file named <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-title.md</code> with front matter at the top:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">My</span><span class="nv"> </span><span class="s">First</span><span class="nv"> </span><span class="s">Blog</span><span class="nv"> </span><span class="s">Post"</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2025-03-14</span>
+<span class="nn">---</span>
+
+This is my first blog post using Jekyll and GitHub Pages!
+</code></pre></div></div>
+
+<h3 id="step-3-customize-your-site">Step 3: Customize Your Site</h3>
+
+<p>You can customize your Jekyll site by editing the <code class="language-plaintext highlighter-rouge">_config.yml</code> file and creating your own layouts in the <code class="language-plaintext highlighter-rouge">_layouts</code> directory.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>GitHub Pages is a powerful, free solution for hosting static websites. Whether you’re creating a personal blog, project documentation, or a portfolio site, GitHub Pages makes the process simple and straightforward.</p>
+
+<p>Have you set up a site using GitHub Pages? What challenges did you face, and what tips would you share with others? Let me know in the comments!</p>
+
+<h2 id="further-resources">Further Resources</h2>
+
+<ul>
+  <li><a href="https://docs.github.com/en/pages">GitHub Pages Documentation</a></li>
+  <li><a href="https://jekyllrb.com/docs/">Jekyll Documentation</a></li>
+  <li><a href="https://guides.github.com/features/mastering-markdown/">Mastering Markdown</a></li>
+</ul>]]></content><author><name>Nahome</name></author><category term="Web Development" /><category term="GitHub" /><category term="github" /><category term="web development" /><category term="static sites" /><summary type="html"><![CDATA[Learn how to create and host your own website using GitHub Pages for free.]]></summary></entry><entry><title type="html">Modern Web Design Principles</title><link href="http://localhost:4000/blog/2024/03/15/modern-web-design-principles/" rel="alternate" type="text/html" title="Modern Web Design Principles" /><published>2024-03-15T00:00:00-07:00</published><updated>2024-03-15T00:00:00-07:00</updated><id>http://localhost:4000/blog/2024/03/15/modern-web-design-principles</id><content type="html" xml:base="http://localhost:4000/blog/2024/03/15/modern-web-design-principles/"><![CDATA[<p>Web design has evolved significantly over the years, transitioning from garish blinking text and animated GIFs to sophisticated, user-centered design systems. In this post, I’ll explore the core principles of modern web design that can help you create more effective and engaging websites.</p>
+
+<h2 id="simplicity-and-clarity">Simplicity and Clarity</h2>
+
+<p>One of the defining characteristics of modern web design is simplicity. The “less is more” philosophy governs today’s best websites, with clean layouts, purposeful white space, and clear visual hierarchies.</p>
+
+<h3 id="why-simplicity-works">Why Simplicity Works:</h3>
+
+<ul>
+  <li><strong>Reduces cognitive load</strong> - Users can focus on content without distractions</li>
+  <li><strong>Speeds up comprehension</strong> - Important information is easier to find</li>
+  <li><strong>Enhances accessibility</strong> - Simpler interfaces are generally more accessible</li>
+</ul>
+
+<p>Good design doesn’t call attention to itself. Instead, it guides users naturally toward the content or actions that matter most.</p>
+
+<h2 id="responsive-and-mobile-first-design">Responsive and Mobile-First Design</h2>
+
+<p>With more than half of all web traffic coming from mobile devices, designing for smaller screens is no longer optional.</p>
+
+<h3 id="key-aspects-of-mobile-first-design">Key aspects of mobile-first design:</h3>
+
+<ol>
+  <li><strong>Start with mobile layouts</strong> - Design for the smallest screen first, then progressively enhance for larger screens</li>
+  <li><strong>Touch-friendly interactions</strong> - Ensure elements are properly sized for finger taps (minimum 44×44 pixels)</li>
+  <li><strong>Performance optimization</strong> - Mobile users often have slower connections, so optimize images and minimize code</li>
+</ol>
+
+<h2 id="visual-hierarchy-and-typography">Visual Hierarchy and Typography</h2>
+
+<p>A clear visual hierarchy helps users understand the relative importance of elements on the page.</p>
+
+<h3 id="establishing-hierarchy">Establishing hierarchy:</h3>
+
+<ul>
+  <li><strong>Size contrast</strong> - Larger elements naturally draw more attention</li>
+  <li><strong>Color and contrast</strong> - Strategic use of color to highlight important elements</li>
+  <li><strong>Spacing</strong> - Proper spacing groups related elements and separates distinct sections</li>
+</ul>
+
+<p>Typography plays a crucial role in establishing hierarchy while maintaining readability:</p>
+
+<ul>
+  <li>Use no more than 2-3 font families</li>
+  <li>Ensure sufficient contrast between text and background</li>
+  <li>Maintain comfortable line heights (typically 1.4-1.6)</li>
+  <li>Keep line lengths reasonable (50-75 characters per line)</li>
+</ul>
+
+<h2 id="purposeful-animation-and-microinteractions">Purposeful Animation and Microinteractions</h2>
+
+<p>Modern websites use animation not just for decoration but to improve user experience.</p>
+
+<h3 id="effective-uses-of-animation">Effective uses of animation:</h3>
+
+<ul>
+  <li><strong>Transitions between states</strong> - Smoothly moving between different UI states</li>
+  <li><strong>Feedback</strong> - Confirming user actions (like form submissions)</li>
+  <li><strong>Guidance</strong> - Drawing attention to important elements or actions</li>
+  <li><strong>Storytelling</strong> - Supporting narrative through motion</li>
+</ul>
+
+<h2 id="accessibility-and-inclusivity">Accessibility and Inclusivity</h2>
+
+<p>Modern web design recognizes that websites should be usable by everyone, including people with disabilities.</p>
+
+<h3 id="accessibility-fundamentals">Accessibility fundamentals:</h3>
+
+<ul>
+  <li><strong>Semantic HTML</strong> - Using the right elements for their intended purpose</li>
+  <li><strong>Keyboard navigation</strong> - Ensuring the site can be used without a mouse</li>
+  <li><strong>Color contrast</strong> - Making sure text is readable (WCAG recommends a minimum 4.5:1 ratio)</li>
+  <li><strong>Alternative text</strong> - Providing descriptions for images</li>
+  <li><strong>Focus states</strong> - Making it clear which element has keyboard focus</li>
+</ul>
+
+<h2 id="performance-as-design">Performance as Design</h2>
+
+<p>Loading speed isn’t just a technical concern—it’s a fundamental aspect of user experience.</p>
+
+<h3 id="performance-considerations">Performance considerations:</h3>
+
+<ul>
+  <li>Optimize and properly size images</li>
+  <li>Minimize HTTP requests</li>
+  <li>Implement lazy loading for off-screen content</li>
+  <li>Use appropriate caching strategies</li>
+  <li>Consider the impact of third-party scripts</li>
+</ul>
+
+<h2 id="dark-mode-and-color-schemes">Dark Mode and Color Schemes</h2>
+
+<p>Supporting user preferences for light and dark themes has become increasingly important.</p>
+
+<h3 id="implementing-color-schemes">Implementing color schemes:</h3>
+
+<ul>
+  <li>Use CSS custom properties (variables) for theme colors</li>
+  <li>Test color contrast in both modes</li>
+  <li>Consider using <code class="language-plaintext highlighter-rouge">prefers-color-scheme</code> media query to respect system preferences</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Modern web design balances aesthetics with functionality, focusing on the user’s needs above all else. By embracing simplicity, responsiveness, clear hierarchy, purposeful animation, accessibility, and performance optimization, you can create websites that not only look good but work well for everyone.</p>
+
+<p>Remember that good design is invisible—it gets out of the way and lets users accomplish their goals with minimum friction.</p>
+
+<p>What modern web design principles do you find most important? Share your thoughts in the comments!</p>]]></content><author><name>Nahome</name></author><category term="Web Development" /><category term="Design" /><category term="design" /><category term="web development" /><category term="user experience" /><summary type="html"><![CDATA[Exploring the key principles that make websites both beautiful and functional.]]></summary></entry></feed>

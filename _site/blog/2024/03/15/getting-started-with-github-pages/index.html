@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with GitHub Pages | Nahome Hagos</title>
+    <meta name="description" content="Learn how to create and host your own website using GitHub Pages for free.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    
+    
+    <!-- SEO and Open Graph tags -->
+<meta property="og:title" content="Getting Started with GitHub Pages">
+<meta property="og:description" content="Learn how to create and host your own website using GitHub Pages for free.">
+<meta property="og:url" content="http://localhost:4000/blog/2024/03/15/getting-started-with-github-pages/">
+<meta property="og:site_name" content="Nahome Hagos">
+<meta property="og:type" content="article">
+
+<meta property="og:image" content="http://localhost:4000/assets/images/blog/github-pages.jpg">
+
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Getting Started with GitHub Pages">
+<meta name="twitter:description" content="Learn how to create and host your own website using GitHub Pages for free.">
+
+<meta name="twitter:image" content="http://localhost:4000/assets/images/blog/github-pages.jpg">
+
+
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">Nahome Hagos</a>
+            <ul class="nav-links">
+                <li><a href="/#about">About</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/#projects">Projects</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <div class="post-header" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('/assets/images/blog/github-pages.jpg');">
+  <div class="container">
+    <h1 class="post-title">Getting Started with GitHub Pages</h1>
+    <div class="post-meta">
+      <time datetime="2024-03-15T00:00:00-07:00">March 15, 2024</time>
+      
+      <span class="post-categories">
+        
+        <a href="/blog/categories/Web%20Development">Web Development</a>, 
+        
+        <a href="/blog/categories/GitHub">GitHub</a>
+        
+      </span>
+      
+    </div>
+  </div>
+</div>
+
+<article class="post">
+  <div class="container post-content">
+    <p>GitHub Pages is a fantastic free hosting service that allows you to publish a website directly from your GitHub repository. In this guide, I’ll walk you through the process of setting up your own site using GitHub Pages.</p>
+
+<h2 id="what-is-github-pages">What is GitHub Pages?</h2>
+
+<p>GitHub Pages is a static site hosting service that takes HTML, CSS, and JavaScript files directly from a repository on GitHub, optionally runs the files through a build process, and publishes a website. You can host your site on GitHub’s <code class="language-plaintext highlighter-rouge">github.io</code> domain or your own custom domain.</p>
+
+<h2 id="why-use-github-pages">Why Use GitHub Pages?</h2>
+
+<p>There are several compelling reasons to use GitHub Pages for your website:</p>
+
+<ol>
+  <li><strong>It’s completely free</strong> - No hosting fees or hidden charges</li>
+  <li><strong>Simple deployment</strong> - Push to your repository and your changes are live</li>
+  <li><strong>Version control</strong> - Your website is in a Git repository, so you have full history</li>
+  <li><strong>Custom domains</strong> - You can use your own domain name</li>
+  <li><strong>HTTPS support</strong> - Free SSL certificates through Let’s Encrypt</li>
+</ol>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<h3 id="step-1-create-a-github-repository">Step 1: Create a GitHub Repository</h3>
+
+<p>First, create a new repository on GitHub. To create a user site (which will be available at <code class="language-plaintext highlighter-rouge">username.github.io</code>), name your repository <code class="language-plaintext highlighter-rouge">username.github.io</code>, replacing “username” with your actual GitHub username.</p>
+
+<h3 id="step-2-clone-the-repository">Step 2: Clone the Repository</h3>
+
+<p>Clone the repository to your local machine:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/username/username.github.io.git
+<span class="nb">cd </span>username.github.io
+</code></pre></div></div>
+
+<h3 id="step-3-create-your-website">Step 3: Create Your Website</h3>
+
+<p>You can now start building your website. At a minimum, you need an <code class="language-plaintext highlighter-rouge">index.html</code> file:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>My GitHub Pages Site<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Hello World!<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Welcome to my GitHub Pages site.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="step-4-commit-and-push">Step 4: Commit and Push</h3>
+
+<p>Add, commit, and push your changes to GitHub:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Initial commit"</span>
+git push <span class="nt">-u</span> origin main
+</code></pre></div></div>
+
+<h3 id="step-5-enable-github-pages">Step 5: Enable GitHub Pages</h3>
+
+<ol>
+  <li>Go to your repository on GitHub</li>
+  <li>Click on “Settings”</li>
+  <li>Scroll down to the “GitHub Pages” section</li>
+  <li>Select the branch you want to publish (usually “main”)</li>
+  <li>Click “Save”</li>
+</ol>
+
+<p>After a few minutes, your site will be available at <code class="language-plaintext highlighter-rouge">https://username.github.io</code>.</p>
+
+<h2 id="using-jekyll-with-github-pages">Using Jekyll with GitHub Pages</h2>
+
+<p>GitHub Pages has built-in support for Jekyll, a popular static site generator. Jekyll makes it easy to create a blog or more complex site structure.</p>
+
+<h3 id="step-1-create-a-jekyll-site">Step 1: Create a Jekyll Site</h3>
+
+<p>If you want to use Jekyll, you can either:</p>
+
+<ul>
+  <li>Create a new Jekyll site locally and push it to your repository</li>
+  <li>Add a <code class="language-plaintext highlighter-rouge">_config.yml</code> file to your existing repository</li>
+</ul>
+
+<p>For a new Jekyll site:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>jekyll bundler
+jekyll new my-site
+<span class="nb">cd </span>my-site
+</code></pre></div></div>
+
+<h3 id="step-2-add-blog-posts">Step 2: Add Blog Posts</h3>
+
+<p>With Jekyll, blog posts are Markdown files in the <code class="language-plaintext highlighter-rouge">_posts</code> directory. Create a file named <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-title.md</code> with front matter at the top:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">My</span><span class="nv"> </span><span class="s">First</span><span class="nv"> </span><span class="s">Blog</span><span class="nv"> </span><span class="s">Post"</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2025-03-14</span>
+<span class="nn">---</span>
+
+This is my first blog post using Jekyll and GitHub Pages!
+</code></pre></div></div>
+
+<h3 id="step-3-customize-your-site">Step 3: Customize Your Site</h3>
+
+<p>You can customize your Jekyll site by editing the <code class="language-plaintext highlighter-rouge">_config.yml</code> file and creating your own layouts in the <code class="language-plaintext highlighter-rouge">_layouts</code> directory.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>GitHub Pages is a powerful, free solution for hosting static websites. Whether you’re creating a personal blog, project documentation, or a portfolio site, GitHub Pages makes the process simple and straightforward.</p>
+
+<p>Have you set up a site using GitHub Pages? What challenges did you face, and what tips would you share with others? Let me know in the comments!</p>
+
+<h2 id="further-resources">Further Resources</h2>
+
+<ul>
+  <li><a href="https://docs.github.com/en/pages">GitHub Pages Documentation</a></li>
+  <li><a href="https://jekyllrb.com/docs/">Jekyll Documentation</a></li>
+  <li><a href="https://guides.github.com/features/mastering-markdown/">Mastering Markdown</a></li>
+</ul>
+
+    
+    
+    <div class="post-tags">
+      <h3>Tags:</h3>
+      <div class="tags">
+        
+        <a href="/blog/tags/github" class="tag">github</a>
+        
+        <a href="/blog/tags/web%20development" class="tag">web development</a>
+        
+        <a href="/blog/tags/static%20sites" class="tag">static sites</a>
+        
+      </div>
+    </div>
+    
+  </div>
+</article>
+
+<div class="post-navigation">
+  <div class="container">
+    <div class="post-navigation-links">
+      
+      
+      
+      <a class="next" href="/blog/2024/03/15/modern-web-design-principles/">
+        <span>Next</span>
+        <h4>Modern Web Design Principles</h4>
+      </a>
+      
+    </div>
+  </div>
+</div>
+
+
+<div class="related-posts">
+  <div class="container">
+    <h2>Related Posts</h2>
+    <div class="blog-grid">
+      
+      <article class="blog-card">
+        
+        <div class="blog-card-image" style="background-image: url('/assets/images/blog/web-design.jpg');"></div>
+        
+        <div class="blog-card-content">
+          <time datetime="2024-03-15T00:00:00-07:00">March 15, 2024</time>
+          <h3>Modern Web Design Principles</h3>
+          <p>Exploring the key principles that make websites both beautiful and functional.</p>
+          <a href="/blog/2024/03/15/modern-web-design-principles/" class="read-more">Read More</a>
+        </div>
+      </article>
+      
+    </div>
+  </div>
+</div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="/">Nahome Hagos</a>
+                </div>
+                <div class="footer-social">
+                    
+                    <a href="https://github.com/nahomeh" aria-label="GitHub" target="_blank" rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                    
+                    
+                    
+                    
+                    
+                </div>
+                <div class="footer-links">
+                    <a href="/#about">About</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/#projects">Projects</a>
+                    <a href="/#contact">Contact</a>
+                </div>
+                <p class="copyright">&copy; 2025 Nahome Hagos. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/scripts.js"></script>
+    
+    
+</body>
+</html>

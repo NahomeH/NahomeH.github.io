@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Modern Web Design Principles"
-date: 2025-03-10
+date: 2024-03-15
 categories: [Web Development, Design]
 tags: [design, web development, user experience]
 excerpt: "Exploring the key principles that make websites both beautiful and functional."

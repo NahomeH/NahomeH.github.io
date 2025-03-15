@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Getting Started with GitHub Pages"
-date: 2025-03-14
+date: 2024-03-15
 categories: [Web Development, GitHub]
 tags: [github, web development, static sites]
 excerpt: "Learn how to create and host your own website using GitHub Pages for free."
