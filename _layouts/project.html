@@ -1,0 +1,65 @@
+---
+layout: default
+---
+
+<div class="project-layout">
+  <div class="container">
+    <div class="project-header">
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}
+      <p class="project-description">{{ page.description }}</p>
+      {% endif %}
+    </div>
+    
+    {% if page.featured_image %}
+    <div class="project-image">
+      <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}">
+    </div>
+    {% endif %}
+    
+    <div class="project-content">
+      {{ content }}
+      
+      <div class="project-meta">
+        <h3>Project Details</h3>
+        <div class="project-meta-grid">
+          {% if page.client %}
+          <div class="meta-item">
+            <strong>Client:</strong> {{ page.client }}
+          </div>
+          {% endif %}
+          
+          {% if page.year %}
+          <div class="meta-item">
+            <strong>Year:</strong> {{ page.year }}
+          </div>
+          {% endif %}
+          
+          {% if page.role %}
+          <div class="meta-item">
+            <strong>Role:</strong> {{ page.role }}
+          </div>
+          {% endif %}
+          
+          {% if page.technologies %}
+          <div class="meta-item">
+            <strong>Technologies:</strong>
+            <div class="project-tags">
+              {% for tech in page.technologies %}
+              <span>{{ tech }}</span>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+          
+          {% if page.website %}
+          <div class="meta-item">
+            <strong>Website:</strong>
+            <a href="{{ page.website }}" target="_blank" rel="noopener">{{ page.website }}</a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

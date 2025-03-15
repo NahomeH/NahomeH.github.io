@@ -1,0 +1,58 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>Blog</h1>
+    <p class="page-description">Thoughts, ideas, and stories about technology, design, and more.</p>
+  </div>
+</section>
+
+<section class="blog-list section-padding">
+  <div class="container">
+    {% if site.posts.size > 0 %}
+    <div class="blog-grid">
+      {% for post in paginator.posts %}
+      <article class="blog-card">
+        {% if post.featured_image %}
+        <div class="blog-card-image" style="background-image: url('{{ post.featured_image | relative_url }}');"></div>
+        {% else %}
+        <div class="blog-card-image" style="background-color: #{% cycle '5d8cab', '8cabd5', 'ab5d8c' %};"></div>
+        {% endif %}
+        <div class="blog-card-content">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+          <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    
+    <!-- Pagination links -->
+    {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+      {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}" class="previous">
+        Previous
+      </a>
+      {% endif %}
+      
+      {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}" class="next">
+        Next
+      </a>
+      {% endif %}
+    </div>
+    {% endif %}
+    
+    {% else %}
+    <div class="no-posts">
+      <p>No blog posts yet. Check back soon!</p>
+    </div>
+    {% endif %}
+  </div>
+</section>

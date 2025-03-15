@@ -1,0 +1,75 @@
+# Site settings
+title: Nahome Hagos
+description: Personal website and blog showcasing my projects and thoughts
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://nahomeh.github.io" # the base hostname & protocol
+author: Nahome Hagos
+email: nhagos2020@gmail.com
+
+# Social profiles (empty ones can be removed)
+social_links:
+  github: nahomeh
+  twitter: 
+  linkedin: 
+  instagram:
+  dribbble:
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+# Pagination
+paginate: 6
+paginate_path: "/blog/page:num/"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: false
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - README.md
+  - LICENSE
+
+# Enable future posts (set to true if you want to schedule posts with future dates)
+future: false
+
+# Sass settings (if you decide to use Sass instead of plain CSS)
+# sass:
+#   style: compressed

@@ -1,21 +1,124 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Personal Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            line-height: 1.6;
-        }
-        h1 {
-            color: #333;
-        }
-    </style>
-</head>
-<body>
-    <h1>Welcome to My Website</h1>
-    <p>This is my personal website hosted on GitHub Pages.</p>
-    <p>I'm just getting started, but I'll be adding more content soon!</p>
-</body>
-</html>
+---
+layout: default
+title: Home
+---
+
+<section class="hero">
+  <div class="container">
+    <h1 class="fade-in">Hi, I'm {{ site.author }}</h1>
+    <p class="subtitle fade-in delay-1">Welcome to my personal website and blog.</p>
+    <div class="hero-buttons fade-in delay-2">
+      <a href="#about" class="btn btn-primary">Learn More</a>
+      <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about section-padding">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>Hello! I'm {{ site.author }}, welcome to my personal website. This is where I share my thoughts, projects, and experiences.</p>
+        <p>I'm passionate about technology, design, and creating meaningful experiences on the web. This site serves as my digital garden - a place where I can grow and share ideas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="blog" class="blog section-padding bg-light">
+  <div class="container">
+    <h2 class="section-title">Latest Posts</h2>
+    <div class="blog-grid">
+      {% for post in site.posts limit:3 %}
+      <article class="blog-card">
+        {% if post.featured_image %}
+        <div class="blog-card-image" style="background-image: url('{{ post.featured_image | relative_url }}');"></div>
+        {% else %}
+        <div class="blog-card-image" style="background-color: #{% cycle '5d8cab', '8cabd5', 'ab5d8c' %};"></div>
+        {% endif %}
+        <div class="blog-card-content">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+          <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="text-center mt-4">
+      <a href="{{ '/blog' | relative_url }}" class="btn btn-secondary">View All Posts</a>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="projects section-padding">
+  <div class="container">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+      {% for project in site.projects limit:3 %}
+      <article class="project-card">
+        {% if project.featured_image %}
+        <div class="project-card-image" style="background-image: url('{{ project.featured_image | relative_url }}');"></div>
+        {% else %}
+        <div class="project-card-image" style="background-color: #{% cycle 'ab5d8c', '5d8cab', '8cabd5' %};"></div>
+        {% endif %}
+        <div class="project-card-content">
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.excerpt | strip_html | truncate: 120 }}</p>
+          {% if project.technologies %}
+          <div class="project-tags">
+            {% for tech in project.technologies %}
+            <span>{{ tech }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+          <a href="{{ project.url | relative_url }}" class="btn btn-small">View Project</a>
+        </div>
+      </article>
+      {% endfor %}
+      
+      {% if site.projects.size == 0 %}
+      <!-- Fallback if no projects exist yet -->
+      <article class="project-card">
+        <div class="project-card-image" style="background-color: #ab5d8c;"></div>
+        <div class="project-card-content">
+          <h3>Personal Website</h3>
+          <p>A modern, minimalist website built with Jekyll, HTML, CSS, and JavaScript.</p>
+          <div class="project-tags">
+            <span>Jekyll</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+          <a href="#" class="btn btn-small">View Project</a>
+        </div>
+      </article>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact section-padding bg-light">
+  <div class="container">
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="text-center mb-4">Have a question or want to work together? Feel free to reach out!</p>
+    <div class="contact-container">
+      <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
